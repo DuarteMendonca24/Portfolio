@@ -12,7 +12,6 @@
       padding: 0;
       height: 100%;
       overflow: auto; /* Enable scrolling */
-      background-color: #1c1c1c; /* Black background color */
       background-image: url(images/skyStar.png);
     }
 
@@ -39,6 +38,19 @@
     .title {
       color: #fff;
       margin-bottom: 20px;
+     
+    }
+
+    @font-face{
+      font-family: "Star wars";
+      src: url(Fonts/KnockoutChampion/Starjout.eot) format('embedded-opentype'), url(Fonts/KnockoutChampion/Starjout.ttf) format('truetype'), url(Fonts/KnockoutChampion/Starjout.woff) format('woff');
+    }
+
+    .title h1{
+      font-family: 'Star wars';
+      font-weight: 100;
+      letter-spacing: 2px;
+   
     }
 
     .info {
@@ -52,15 +64,22 @@
 
     .info h2 {
       margin: 0 10px; /* Add some margin between the items */
-      margin-top: 20px;
+      margin-top: 0px;
       color: #fff;
+      font-family: 'Star wars';
+      font-weight: 100;
+      font-size: 18px;
+      letter-spacing: 2px;
+   
       
     }
 
     .info h2 span {
-     font-weight: 50px; /* Adjust the font weight if needed */
+     
      font-size: 20px; /* Adjust the font size if needed */
-     color: #D3D3D3; /* Adjust the color if needed */
+    
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     
     }
 
 
@@ -71,6 +90,7 @@
       box-sizing: border-box;
       color: #fff;
       text-align: left;
+      
     }
 
     .description h2,
@@ -79,6 +99,17 @@
       margin-left: -10px;
       margin-top: 20px;
      
+    }
+
+    .description h2{
+      font-family: 'Star wars';
+      font-weight: 100;
+      letter-spacing: 2px;
+   
+    }
+
+    .description p{
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 
     .game-container {
@@ -95,7 +126,7 @@
 
   <div class="container">
     <div class="title">
-      <h1>Knockout Champion</h1>
+      <h1>knockout Champion</h1>
     </div>
 
     <div class="info">
@@ -105,12 +136,12 @@
     </div>
 
     <div class="description">
-      <h2>About this project</h2>
-      <p>Knockout Champion is a game where the players try to knock each other off the platform</p>
+      <h2>about this project</h2>
+      <p>knockout Champion is a game where the players try to knock each other off the platform</p>
     </div>
 
     <div class="game-container">
-      <iframe src="KnockoutChampion/index.html" width="960" height="600"></iframe>
+      <iframe src="builds/KnockoutChampion/index.html" width="960" height="600"></iframe>
     </div>
   </div>
 
