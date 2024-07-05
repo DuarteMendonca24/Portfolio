@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/e5e9fc0a0a.js" crossorigin="anonymous"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: auto; /* Enable scrolling */
+      background-image: url(images/spellBackground.png);
+      background-size: cover; /* Ensures the image covers the entire background */
+      background-repeat: no-repeat; /* Prevents the image from repeating */
+      background-position: center center; /* Centers the image */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align items at the start of the container */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background: #1c1c1c13; /* Semi-transparent background */
+      border-radius: 15px; /* Rounded corners */
+      max-width: 1000px; /* Maximum width */
+      width: 100%;
+      box-sizing: border-box;
+      margin: 20px; /* Add margin for spacing */
+      border: 2px solid #1c1c1c; /* Optional border for better visibility */
+    }
+
+    .title {
+      color: black;
+      margin-bottom: 20px;
+     
+    }
+
+    @font-face{
+      font-family: "Planewalker";
+      src: url(Fonts/SpellShaders/Planewalker.eot) format('embedded-opentype'), url(Fonts/SpellShaders/Planewalker.ttf) format('truetype'), url(Fonts/SpellShaders/Planewalker.woff) format('woff');
+    }
+
+    @import url('https://fonts.cdnfonts.com/css/antiqua-2');
+
+    .title h1{
+      font-family:b; 
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-around; /* Space between the items */
+      width: 100%;
+      max-width: 960px; /* Adjust based on your layout */
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .info h2 {
+      margin: 0 10px; /* Add some margin between the items */
+      margin-top: 0px;
+      color: black;
+      font-family: 'Planewalker';
+      font-size: 25px;
+   
+      
+    }
+
+    .info h2 span {
+     
+      font-size: 22px;
+      font-family: 'Book Antiqua', sans-serif;
+     
+    }
+
+
+    .description {
+      width: 100%;
+      max-width: 960px; /* Adjust based on your layout */
+      padding: 10px;
+      box-sizing: border-box;
+      color: black;
+      text-align: left;
+      
+    }
+
+    .description h2,
+    .description p {
+
+      margin-left: -10px;
+      margin-top: 20px;
+     
+    }
+
+    .description h2{
+      font-family: 'Planewalker';
+
+    }
+
+    .description p{
+      font-family: 'Book Antiqua', sans-serif;
+    }
+
+    .game-container {
+      margin-top: 20px;
+
+    }
+
+    iframe {
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">
+      <h1>Spell Shaders</h1>
+    </div>
+
+    <div class="info">
+      <h2>Project Status: <span>Completed</span></h2>
+      <h2>Software used: <span>Unity</span></h2>
+      <h2>Language used: <span>HLSL & C#</span></h2>
+    </div>
+
+    <div class="description">
+      <h2>About this project</h2>
+      <p>knockout Champion is a game where the players try to knock each other off the platform</p>
+    </div>
+
+    <div class="game-container">
+      <video width="960" height="600" controls>
+        <source src="videos/spellShadersDemo.mp4" type="video/mp4">
+    </video>
+    </div>
+  </div>
+
+</body>
+</html>

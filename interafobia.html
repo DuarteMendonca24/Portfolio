@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/e5e9fc0a0a.js" crossorigin="anonymous"></script>
+  <style>
+   html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: auto; /* Enable scrolling */
+      background-image: url(images/interafobiaBackground.png);
+      background-size: cover; /* Ensures the image covers the entire background */
+      background-repeat: no-repeat; /* Prevents the image from repeating */
+      background-position: center center; /* Centers the image */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align items at the start of the container */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background: #1c1c1c13; /* Semi-transparent background */
+      border-radius: 15px; /* Rounded corners */
+      max-width: 1000px; /* Maximum width */
+      width: 100%;
+      box-sizing: border-box;
+      margin: 20px; /* Add margin for spacing */
+      border: 2px solid #9804fc /* Optional border for better visibility */
+    }
+
+    .title {
+      color: #9804fc;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+     
+    }
+
+    @font-face{
+      font-family: "Pixel";
+      src: url(Fonts/Interafobia/PixelBit-Free.eot) format('embedded-opentype'), url(Fonts/Interafobia/PixelBit-Free.ttf) format('truetype'), url(Fonts/Interafobia/PixelBit-Free.woff) format('woff');
+    }
+
+    .title h1{
+      font-family: 'Pixel';
+    
+      font-size: 40px;
+   
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-around; /* Space between the items */
+      width: 100%;
+      max-width: 960px; /* Adjust based on your layout */
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .info h2 {
+      margin: 0 10px; /* Add some margin between the items */
+      margin-top: 0px;
+      color: #9804fc;
+      font-family: 'Pixel';
+      font-weight: 100;
+      font-size: 30px;
+   
+      
+    }
+
+    .info h2 span {
+     
+     font-size: 27px; /* Adjust the font size if needed */
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     color: white;
+    }
+
+
+    .description {
+      width: 100%;
+      max-width: 960px; /* Adjust based on your layout */
+      padding: 10px;
+      box-sizing: border-box;
+      color: black;
+      text-align: left;
+      
+    }
+
+    .description h2,
+    .description p {
+
+      margin-left: -10px;
+      margin-top: 20px;
+     
+    }
+
+    .description h2{
+      font-family: 'Pixel';
+      font-weight: 100;
+      font-size: 30px;
+      color:#9804fc;
+   
+    }
+
+    .description p{
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: white;
+    }
+
+    .game-container {
+      margin-top: 20px;
+
+    }
+
+    iframe {
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">
+      <h1>InTERAFOBIA</h1>
+    </div>
+
+    <div class="info">
+      <h2>PROJECT STATUS: <span>Completed</span></h2>
+      <h2>SOFTWARE USED: <span>Unity</span></h2>
+      <h2>LAnGUAGE USED: <span>C#</span></h2>
+    </div>
+
+    <div class="description">
+      <h2>ABOUT THIS PROJECT</h2>
+      <p>knockout Champion is a game where the players try to knock each other off the platform</p>
+    </div>
+
+    <div class="game-container">
+      <iframe src="builds/MakeMeLaugh/index.html" width="960" height="600"></iframe>
+    </div>
+  </div>
+
+</body>
+</html>
