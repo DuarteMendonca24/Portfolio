@@ -74,7 +74,15 @@ nav ul li a:hover::after{
 
 .header-text h1 span{
   
-  color: red;
+  color: #ff004f;
+}
+
+.header-logoText h1{
+  font-size: 40px;
+}
+
+.header-logoText h1 span{
+  color: #ff004f;
 }
 /*--------------------about--------------*/
 #about{
@@ -142,11 +150,12 @@ nav ul li a:hover::after{
 .tab-contents ul li{
   list-style: none;
   margin: 10px 0;
+  font-size: 14px;
 }
 
 .tab-contents ul li span{
   color: #b54769;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .tab-contents{
@@ -155,6 +164,20 @@ nav ul li a:hover::after{
 
 .tab-contents.active-tab{
   display: block;
+}
+
+.experience-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.experience-list li {
+  flex: 0 0 50%; /* Each item takes up 50% of the container width */
+  box-sizing: border-box;
+
+
 }
 
 /*-------------portfolio---------------*/
@@ -209,7 +232,7 @@ nav ul li a:hover::after{
   justify-content: center;
   flex-direction: column;
   padding: 0 40px;
-  text-align: center;
+  text-align:justify;
   font-size: 14px;
   transition: height 0.5s;
 }
