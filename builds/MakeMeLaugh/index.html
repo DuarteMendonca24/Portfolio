@@ -6,8 +6,12 @@
     <title>Unity WebGL Player | Make Me Laugh</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="https://kit.fontawesome.com/e5e9fc0a0a.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div id="play-button-container">
+      <button id="play-button"><i class="fa-regular fa-circle-play"></i>&nbspRun game</button>
+    </div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=540></canvas>
       <div id="unity-loading-bar">
@@ -29,7 +33,10 @@
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      fullscreenButton.style.display = "none";
       var warningBanner = document.querySelector("#unity-warning");
+      var playButton = document.querySelector("#play-button");
+      var playButtonContainer = document.querySelector("#play-button-container");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -97,7 +104,12 @@
         canvas.style.height = "540px";
       }
 
+      playButton.onclick = () => {
+      playButtonContainer.style.display = "none";
+      playButton.style.display = "none";
+      canvas.style.display = "block";
       loadingBar.style.display = "block";
+      fullscreenButton.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -114,6 +126,7 @@
         });
       };
       document.body.appendChild(script);
+    };
     </script>
   </body>
 </html>
