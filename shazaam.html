@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/e5e9fc0a0a.js" crossorigin="anonymous"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: auto; /* Enable scrolling */
+      background-image: url(images/menu_dark_background.png);
+      background-size: cover; /* Ensures the image covers the entire background */
+      background-repeat: no-repeat; /* Prevents the image from repeating */
+      background-position: center center; /* Centers the image */
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Align items at the start of the container */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background: #1c1c1c8e; /* Semi-transparent background */
+      border-radius: 15px; /* Rounded corners */
+      max-width: 1000px; /* Maximum width */
+      width: 100%;
+      box-sizing: border-box;
+      margin: 20px; /* Add margin for spacing */
+      border: 2px solid #fed001; /* Optional border for better visibility */
+    }
+
+    .title {
+      color: #fff;
+      margin-bottom: 20px;
+     
+    }
+
+    @font-face{
+      font-family: "Big Noodle";
+      src: url(Fonts/Shazaam/big_noodle_titling.eot) format('embedded-opentype'), url(Fonts/Shazaam/big_noodle_titling.ttf) format('truetype'), url(Fonts/Shazaam/big_noodle_titling.woff) format('woff');
+    }
+
+    .title h1{
+      font-family: 'Big Noodle'; 
+      letter-spacing: 1px;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-around; /* Space between the items */
+      width: 100%;
+      max-width: 960px; /* Adjust based on your layout */
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .info h2 {
+      margin: 0 10px; /* Add some margin between the items */
+      margin-top: 0px;
+      color: #fff;
+      font-family: 'Big Noodle';
+      font-size: 25px;  
+      letter-spacing: 1px;
+    }
+
+    .info h2 span {
+     
+      font-size: 22px;
+      font-weight: 100;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+     
+    }
+
+
+    .description {
+      width: 100%;
+      max-width: 960px; /* Adjust based on your layout */
+      padding: 10px;
+      box-sizing: border-box;
+      color: #fff;
+      text-align: left;
+      
+    }
+
+    .description h2,
+    .description p {
+
+      margin-left: -10px;
+      margin-top: 20px;
+      
+     
+    }
+
+    .description h2{
+      font-family: 'Big Noodle'; 
+      letter-spacing: 1px;
+    }
+
+    .description p{
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      text-align: justify;
+    }
+
+    .video-container {
+      margin-top: 20px;
+
+
+    }
+
+    iframe {
+      border: none;
+    }
+
+    a{
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">
+      <h1>Shazaam</h1>
+    </div>
+
+    <div class="info">
+      <h2>Project Status: <span>In development</span></h2>
+      <h2>Software used: <span>Unity</span></h2>
+      <h2>Language used: <span>C#</span></h2>
+    </div>
+
+    <div class="description">
+      <h2>About this project</h2>
+      <p>SHAZAAM (Science Hoaxes to Avoid Alienation in Generation Z, A Media Literacy Approach) aims to strengthen the critical thinking skills of young people, enabling them to assess the trustworthiness of scientific information and combat pseudoscience hoaxes. 
+      This project focuses on developing non-formal educational materials using gamification for both in-person and remote learning environments.
+      <br><br>
+      Adopting a techno-social approach, SHAZAAM combines social science methods with advanced digital tools. 
+      It operates in close consultation with academic institutions, scientific bodies, and civil organizations, complementing the activities of the European Digital Media Observatory (EDMO) and its hub, MedMO, which covers the European Southeast borders. The project targets 3,000 individuals in remote areas of Greece and Portugal.
+      For more information about the project check the official website: <a href="https://shazaam.eu/">https://shazaam.eu/</a>
+      </p>
+
+      <h2>Board Game</h2>
+      <p>During my internship in MOG Technologies I was tasked to develop a board game in Unity from an existing prototype and implementing its mechanics.
+      The goal of the game was to support the SHAZAAM project to combat disinformation caused by pseudoscience.
+      <br><br>
+      The narrative of the game consists on a group of characters that spread scientific misinformation.
+      It's up to the player to unmask those characters and gains followers on social media.
+      <br><br>
+      Players can choose between two modes: Local Mode, where they share the same computer, and Multiplayer Mode, where each player uses their own computer.
+      <br><br>
+      In the lobby, players select their avatars and enter their names, preparing for the adventure ahead. The main map features turn-based movement determined by dice rolls, where players navigate through various cells with different effects.
+      <br><br>
+      Cell Types:
+      <br><br>
+      Normal Cells: No special effects.
+      <br>
+      Quiz Cells: Pose questions about pseudoscience, challenging players' knowledge.
+      <br>
+      Special Power Cells: Grant unique abilities to aid in gameplay.
+      <br><br>
+      The objective is to gain followers by correctly answering quiz questions and utilizing special cells. 
+      Each quiz cell contains a character token, with a total of five tokens to unlock. The game concludes when all tokens are collected.
+      The game winner is the player with the most followers at the end.
+      </p>
+
+      <h2>Menu & Lobby</h2>
+      
+    </div>
+
+    <div class="video-container">
+      <video width="960" height="600" controls>
+        <source src="videos/Shazaam/menuLobby.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!----------------------------Turn Change--------------------------------->
+
+    <div class="description">
+      <h2>Turn change</h2>
+    </div>
+
+    <div class="video-container">
+      <video width="960" height="600" controls>
+        <source src="videos/Shazaam/turnChange.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!----------------------------Follower Boost Cell--------------------------------->
+
+    <div class="description">
+      <h2>Follower Boost Cell</h2>
+    </div>
+
+    <div class="video-container">
+      <video width="960" height="600" controls>
+        <source src="videos/Shazaam/followerBoostCell.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!----------------------------Loot Cell--------------------------------->
+    <div class="description">
+      <h2>Loot Cell</h2>
+    </div>
+
+    <div class="video-container">
+      <video width="960" height="600" controls>
+        <source src="videos/Shazaam/lootCell.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!----------------------------Teleport Cell--------------------------------->
+    <div class="description">
+      <h2>Teleport Cell</h2>
+    </div>
+
+    <div class="video-container">
+      <video width="960" height="600" controls>
+        <source src="videos/Shazaam/teleportCell.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!----------------------------Roll the Dice Cell--------------------------------->
+    <div class="description">
+      <h2>Roll the Dice Cell</h2>
+    </div>
+
+    <div class="video-container">
+      <video width="960" height="600" controls>
+        <source src="videos/Shazaam/rollDiceCell.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!----------------------------Surprise Cell--------------------------------->
+    <div class="description">
+      <h2>Surprise Cell</h2>
+    </div>
+
+    <div class="video-container">
+      <video width="960" height="600" controls>
+        <source src="videos/Shazaam/surpriseCell.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!----------------------------Quiz Cell--------------------------------->
+
+    <div class="description">
+      <h2>Quiz Cell & Tokens</h2>
+    </div>
+
+    <div class="video-container">
+      <video width="960" height="600" controls>
+        <source src="videos/Shazaam/quizToken.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!----------------------------Multiplayer--------------------------------->
+    <div class="description">
+      <h2>Multiplayer</h2>
+    </div>
+
+    <div class="video-container">
+      <video width="960" height="600" controls>
+        <source src="videos/Shazaam/multiplayer.mp4" type="video/mp4">
+      </video>
+    </div>
+  
+  </div>
+
+</body>
+</html>
