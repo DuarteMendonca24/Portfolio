@@ -94,15 +94,20 @@
     .description h2,
     .description p {
 
-      margin-left: -10px;
-      margin-top: 20px;
-      
      
+      margin-top: 20px;
+    
+    
     }
 
     .description h2{
       font-family: 'Big Noodle'; 
       letter-spacing: 1px;
+      cursor: pointer;
+      border-radius: 3px;
+      padding: 5px;
+      background-color: #6565656b;
+      
     }
 
     .description p{
@@ -110,12 +115,43 @@
       text-align: justify;
     }
 
-    .video-container {
-      margin-top: 20px;
-
-
+    .paragraph-container {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.7s ease-out;
     }
 
+    .paragraph-container.open {
+      max-height: 1000px; /* or a value large enough to fit the content */
+    }
+
+    .description h2 {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+
+    .video-container-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .video-container {
+      overflow: hidden;
+      height: 0;
+      transition: height 0.5s ease-out;
+    }
+
+    .video-container video {
+      width: 100%;
+    }
+
+    .video-container.open {
+      height: auto;
+      transition: height 0.5s ease-out;
+    }
     iframe {
       border: none;
     }
@@ -123,6 +159,10 @@
     a{
       color: white;
     }
+
+    
+    
+
   </style>
 </head>
 <body>
@@ -138,6 +178,7 @@
       <h2>Language used: <span>C#</span></h2>
     </div>
 
+    <!----------------------------About this project--------------------------------->
     <div class="description">
       <h2>About this project</h2>
       <p>SHAZAAM (Science Hoaxes to Avoid Alienation in Generation Z, A Media Literacy Approach) aims to strengthen the critical thinking skills of young people, enabling them to assess the trustworthiness of scientific information and combat pseudoscience hoaxes. 
@@ -147,133 +188,207 @@
       It operates in close consultation with academic institutions, scientific bodies, and civil organizations, complementing the activities of the European Digital Media Observatory (EDMO) and its hub, MedMO, which covers the European Southeast borders. The project targets 3,000 individuals in remote areas of Greece and Portugal.
       For more information about the project check the official website: <a href="https://shazaam.eu/">https://shazaam.eu/</a>
       </p>
+    </div>
 
-      <h2>Board Game</h2>
-      <p>During my internship in MOG Technologies I was tasked to develop a board game in Unity from an existing prototype and implementing its mechanics.
-      The goal of the game was to support the SHAZAAM project to combat disinformation caused by pseudoscience.
-      <br><br>
-      The narrative of the game consists on a group of characters that spread scientific misinformation.
-      It's up to the player to unmask those characters and gains followers on social media.
-      <br><br>
-      Players can choose between two modes: Local Mode, where they share the same computer, and Multiplayer Mode, where each player uses their own computer.
-      <br><br>
-      In the lobby, players select their avatars and enter their names, preparing for the adventure ahead. The main map features turn-based movement determined by dice rolls, where players navigate through various cells with different effects.
-      <br><br>
-      Cell Types:
-      <br><br>
-      Normal Cells: No special effects.
-      <br>
-      Quiz Cells: Pose questions about pseudoscience, challenging players' knowledge.
-      <br>
-      Special Power Cells: Grant unique abilities to aid in gameplay.
-      <br><br>
-      The objective is to gain followers by correctly answering quiz questions and utilizing special cells. 
-      Each quiz cell contains a character token, with a total of five tokens to unlock. The game concludes when all tokens are collected.
-      The game winner is the player with the most followers at the end.
-      </p>
+    <!----------------------------Board Game--------------------------------->
+    <div class="description">
 
-      <h2>Menu & Lobby</h2>
+      <h2 onclick="toggleParagraph(this)"><i class="fa-solid fa-caret-right"></i>&nbspBoard Game</h2>
+      <div class="paragraph-container">
+        <p>During my internship in MOG Technologies I was tasked to develop a board game in Unity from an existing prototype and implementing its mechanics.
+          The goal of the game was to support the SHAZAAM project to combat disinformation caused by pseudoscience.
+          <br><br>
+          The narrative of the game consists on a group of characters that spread scientific misinformation.
+          It's up to the player to unmask those characters and gains followers on social media.
+          <br><br>
+          Players can choose between two modes: Local Mode, where they share the same computer, and Multiplayer Mode, where each player uses their own computer.
+          <br><br>
+          In the lobby, players select their avatars and enter their names, preparing for the adventure ahead. The main map features turn-based movement determined by dice rolls, where players navigate through various cells with different effects.
+          <br><br>
+          Cell Types:
+          <br><br>
+          Normal Cells: No special effects.
+          <br>
+          Quiz Cells: Pose questions about pseudoscience, challenging players' knowledge.
+          <br>
+          Special Power Cells: Grant unique abilities to aid in gameplay.
+          <br><br>
+          The objective is to gain followers by correctly answering quiz questions and utilizing special cells. 
+          Each quiz cell contains a character token, with a total of five tokens to unlock. The game concludes when all tokens are collected.
+          The game winner is the player with the most followers at the end.
+        </p>
+      </div>
       
+
     </div>
 
-    <div class="video-container">
-      <video width="960" height="600" controls>
-        <source src="videos/Shazaam/menuLobby.mp4" type="video/mp4">
-      </video>
+    <!----------------------------Menu & Lobby--------------------------------->
+
+    <div class="description">
+      <h2 onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspMenu & Lobby</h2>
     </div>
 
+    <div  class="video-container-wrapper">
+      <div class="video-container">
+        <video width="960" height="600" controls>
+          <source src="videos/Shazaam/menuLobby.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    
     <!----------------------------Turn Change--------------------------------->
 
     <div class="description">
-      <h2>Turn change</h2>
+      <h2 onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspTurn change</h2>
     </div>
-
-    <div class="video-container">
-      <video width="960" height="600" controls>
-        <source src="videos/Shazaam/turnChange.mp4" type="video/mp4">
-      </video>
-    </div>
+    <div class="video-container-wrapper">
+      <div class="video-container">
+        <video width="960" height="600" controls>
+          <source src="videos/Shazaam/turnChange.mp4" type="video/mp4">
+       </video>
+     </div>
 
     <!----------------------------Follower Boost Cell--------------------------------->
 
     <div class="description">
-      <h2>Follower Boost Cell</h2>
+      <h2  onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspFollower Boost Cell</h2>
     </div>
 
-    <div class="video-container">
-      <video width="960" height="600" controls>
+    <div class="video-container-wrapper">
+      <div class="video-container">
+        <video width="960" height="600" controls>
         <source src="videos/Shazaam/followerBoostCell.mp4" type="video/mp4">
       </video>
+      </div>
     </div>
 
     <!----------------------------Loot Cell--------------------------------->
     <div class="description">
-      <h2>Loot Cell</h2>
+      <h2  onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspLoot Cell</h2>
     </div>
 
-    <div class="video-container">
-      <video width="960" height="600" controls>
-        <source src="videos/Shazaam/lootCell.mp4" type="video/mp4">
-      </video>
+    <div class="video-container-wrapper">
+      <div class="video-container">
+        <video width="960" height="600" controls>
+          <source src="videos/Shazaam/lootCell.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
+  
 
     <!----------------------------Teleport Cell--------------------------------->
     <div class="description">
-      <h2>Teleport Cell</h2>
+      <h2  onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspTeleport Cell</h2>
     </div>
 
-    <div class="video-container">
-      <video width="960" height="600" controls>
-        <source src="videos/Shazaam/teleportCell.mp4" type="video/mp4">
-      </video>
+    <div class="video-container-wrapper">
+      <div class="video-container">
+        <video width="960" height="600" controls>
+          <source src="videos/Shazaam/teleportCell.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
+
 
     <!----------------------------Roll the Dice Cell--------------------------------->
     <div class="description">
-      <h2>Roll the Dice Cell</h2>
+      <h2  onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspRoll the Dice Cell</h2>
     </div>
 
-    <div class="video-container">
-      <video width="960" height="600" controls>
-        <source src="videos/Shazaam/rollDiceCell.mp4" type="video/mp4">
-      </video>
+    <div class="video-container-wrapper">
+     <div class="video-container">
+       <video width="960" height="600" controls>
+         <source src="videos/Shazaam/rollDiceCell.mp4" type="video/mp4">
+       </video>
+     </div>
     </div>
 
     <!----------------------------Surprise Cell--------------------------------->
     <div class="description">
-      <h2>Surprise Cell</h2>
+      <h2  onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspSurprise Cell</h2>
     </div>
 
-    <div class="video-container">
-      <video width="960" height="600" controls>
-        <source src="videos/Shazaam/surpriseCell.mp4" type="video/mp4">
-      </video>
+    <div class="video-container-wrapper">
+     <div class="video-container">
+       <video width="960" height="600" controls>
+         <source src="videos/Shazaam/surpriseCell.mp4" type="video/mp4">
+       </video>
+     </div>
     </div>
 
     <!----------------------------Quiz Cell--------------------------------->
 
     <div class="description">
-      <h2>Quiz Cell & Tokens</h2>
+      <h2  onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspQuiz Cell & Tokens</h2>
     </div>
 
-    <div class="video-container">
-      <video width="960" height="600" controls>
-        <source src="videos/Shazaam/quizToken.mp4" type="video/mp4">
-      </video>
+    <div class="video-container-wrapper">
+      <div class="video-container">
+        <video width="960" height="600" controls>
+          <source src="videos/Shazaam/quizToken.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
 
     <!----------------------------Multiplayer--------------------------------->
     <div class="description">
-      <h2>Multiplayer</h2>
+      <h2  onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspMultiplayer</h2>
     </div>
 
-    <div class="video-container">
-      <video width="960" height="600" controls>
-        <source src="videos/Shazaam/multiplayer.mp4" type="video/mp4">
-      </video>
+    <div class="video-container-wrapper">
+      <div class="video-container">
+        <video width="960" height="600" controls>
+          <source src="videos/Shazaam/multiplayer.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   
   </div>
+
+  <script>
+      function toggleVideo(element) {
+        var icon = element.querySelector("i");
+        const videoContainer = element.parentNode.nextElementSibling.querySelector('.video-container');
+          if (videoContainer.classList.contains('open')) {
+            videoContainer.style.height = '0';
+            videoContainer.classList.remove('open');
+            icon.classList.remove("fa-caret-down");
+            icon.classList.add("fa-caret-right");
+          } else {
+            videoContainer.style.height = videoContainer.scrollHeight + 'px';
+            videoContainer.classList.add('open');
+            icon.classList.remove("fa-caret-right");
+            icon.classList.add("fa-caret-down");
+          }
+      }
+
+      function toggleParagraph(header) {
+        // Get the paragraph container following the header
+        const paragraphContainer = header.nextElementSibling;
+
+        // Get the icon inside the header
+        const icon = header.querySelector('i');
+
+        // Check if the paragraph container is currently expanded
+        if (paragraphContainer.classList.contains('open')) {
+          // Collapse the paragraph container
+          paragraphContainer.classList.remove('open');
+
+          // Update the icon to indicate that the section is collapsed
+          icon.classList.remove('fa-caret-down');
+          icon.classList.add('fa-caret-right');
+        } else {
+          // Expand the paragraph container
+          paragraphContainer.classList.add('open');
+
+          // Update the icon to indicate that the section is expanded
+          icon.classList.remove('fa-caret-right');
+          icon.classList.add('fa-caret-down');
+        }
+      }
+
+
+  </script>
 
 </body>
 </html>

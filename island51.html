@@ -1,162 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Website</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/e5e9fc0a0a.js" crossorigin="anonymous"></script>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: auto; /* Enable scrolling */
-      background-image: url(images/island51Background.png);
-      background-size: cover; /* Ensures the image covers the entire background */
-      background-repeat: no-repeat; /* Prevents the image from repeating */
-      background-position: center center; /* Centers the image */
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e5e9fc0a0a.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: auto; /* Enable scrolling */
+        background-image: url(images/island51Background.png);
+        background-size: cover; /* Ensures the image covers the entire background */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-position: center center; /* Centers the image */
+      }
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start; /* Align items at the start of the container */
-    }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Align items at the start of the container */
+      }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      background: #1c1c1c8e; /* Semi-transparent background */
-      border-radius: 15px; /* Rounded corners */
-      max-width: 1000px; /* Maximum width */
-      width: 100%;
-      box-sizing: border-box;
-      margin: 20px; /* Add margin for spacing */
-      border: 2px solid #1c1c1c; /* Optional border for better visibility */
-    }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: #1c1c1c8e; /* Semi-transparent background */
+        border-radius: 15px; /* Rounded corners */
+        max-width: 1000px; /* Maximum width */
+        width: 100%;
+        box-sizing: border-box;
+        margin: 20px; /* Add margin for spacing */
+        border: 2px solid #1c1c1c; /* Optional border for better visibility */
+      }
 
-    .title {
-      color: #fff;
-      margin-bottom: 20px;
-     
-    }
+      .title {
+        color: #fff;
+        margin-bottom: 20px;
+      }
 
-    @font-face{
-      font-family: "Open Sans";
-      src: url(Fonts/Island51/OpenSans-Semibold.eot) format('embedded-opentype'), url(Fonts/Island51/OpenSans-Semibold.ttf) format('truetype'), url(Fonts/Island51/OpenSans-Semibold.woff) format('woff');
-    }
+      @font-face {
+        font-family: "Open Sans";
+        src: url(Fonts/Island51/OpenSans-Semibold.eot)
+            format("embedded-opentype"),
+          url(Fonts/Island51/OpenSans-Semibold.ttf) format("truetype"),
+          url(Fonts/Island51/OpenSans-Semibold.woff) format("woff");
+      }
 
-    .title h1{
-      font-family: 'Open Sans'; 
-      -webkit-text-stroke-width: 1.5px;
-      -webkit-text-stroke-color: black;  
-    }
+      .title h1 {
+        font-family: "Open Sans";
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: black;
+      }
 
-    .info {
-      display: flex;
-      justify-content: space-around; /* Space between the items */
-      width: 100%;
-      max-width: 960px; /* Adjust based on your layout */
-      padding: 10px;
-      box-sizing: border-box;
-    }
+      .info {
+        display: flex;
+        justify-content: space-around; /* Space between the items */
+        width: 100%;
+        max-width: 960px; /* Adjust based on your layout */
+        padding: 10px;
+        box-sizing: border-box;
+      }
 
-    .info h2 {
-      margin: 0 10px; /* Add some margin between the items */
-      margin-top: 0px;
-      color: #fff;
-      font-family: 'Open Sans';
-      font-size: 25px;
-      -webkit-text-stroke-width: 1.3px;
-      -webkit-text-stroke-color: black;  
+      .info h2 {
+        margin: 0 10px; /* Add some margin between the items */
+        margin-top: 0px;
+        color: #fff;
+        font-family: "Open Sans";
+        font-size: 25px;
+        -webkit-text-stroke-width: 1.3px;
+        -webkit-text-stroke-color: black;
+      }
 
-   
-      
-    }
+      .info h2 span {
+        font-size: 22px;
+        font-weight: 100;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        -webkit-text-stroke-width: 0px;
+      }
 
-    .info h2 span {
-     
-      font-size: 22px;
-      font-weight: 100;
-     font-family:Verdana, Geneva, Tahoma, sans-serif;
-     -webkit-text-stroke-width: 0px;
-     
-    }
+      .description {
+        width: 100%;
+        max-width: 960px; /* Adjust based on your layout */
+        padding: 10px;
+        box-sizing: border-box;
+        color: #fff;
+        text-align: left;
+      }
 
+      .description h2,
+      .description p {
+        margin-left: -10px;
+        margin-top: 20px;
+      }
 
-    .description {
-      width: 100%;
-      max-width: 960px; /* Adjust based on your layout */
-      padding: 10px;
-      box-sizing: border-box;
-      color: #fff;
-      text-align: left;
-      
-    }
+      .description h2 {
+        font-family: "Open Sans";
+        -webkit-text-stroke-width: 1.3px;
+        -webkit-text-stroke-color: rgb(0, 0, 0);
+        cursor: pointer;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.207);
+        padding: 5px;
+        height: 40px;
+        line-height: 30px; /* Align text vertically within the fixed height */
+      }
 
-    .description h2,
-    .description p {
+      .description p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: justify;
+      }
 
-      margin-left: -10px;
-      margin-top: 20px;
-      
-     
-    }
+      .game-container {
+        margin-top: 20px;
+      }
 
-    .description h2{
-      font-family: 'Open Sans';
-      -webkit-text-stroke-width: 1.3px;
-      -webkit-text-stroke-color: black;  
-   
-    }
+      iframe {
+        border: none;
+      }
 
-    .description p{
-      font-family:Verdana, Geneva, Tahoma, sans-serif;
-      text-align: justify;
-    }
+      .video-container-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
 
-    .game-container {
-      margin-top: 20px;
+      .video-container {
+        overflow: hidden;
+        height: 0;
+        transition: height 0.5s ease-out;
+      }
 
-    }
+      .video-container video {
+        width: 100%;
+      }
 
-    iframe {
-      border: none;
-    }
-  </style>
-</head>
-<body>
+      .video-container.open {
+        height: auto;
+        transition: height 0.5s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>ISLAND 51</h1>
+      </div>
 
-  <div class="container">
-    <div class="title">
-      <h1>ISLAND 51</h1>
-    </div>
+      <div class="info">
+        <h2>Project Status: <span>Completed</span></h2>
+        <h2>Language used: <span>C++</span></h2>
+        <h2>Library used: <span>SFML</span></h2>
+      </div>
 
-    <div class="info">
-      <h2>Project Status: <span>Completed</span></h2>
-      <h2>Language used: <span>C++</span></h2>
-      <h2>Library used: <span>SFML</span></h2>
-    </div>
+      <!----------------------------About this project--------------------------------->
 
-    <div class="description">
-      <h2>About this project</h2>
-      <p>Island 51 is a top-down 2D survival horror game. The game begins with a plane crash, leaving the protagonist stranded and empty-handed on a mysterious island.
-      The goal is to escape the island, in order to do that , the player must collect resources , craft weapons , find food and defeat the various enemies.
-      <br><br>
-      This game was developed during my time studying abroad at the Technological University of the Shannon in Ireland. 
-      It was created for the course "Project and Team Dynamics" and developed by a team consisting of myself, Kamil Woloszyn, Kai Cheng Wong, and Emmanuel Kadree. 
-      The project follows the theme of Games Fleadh 2024, "Start with Nothing," and was selected by our professor to compete in the Games Fleadh competition.</p>
-    </div>
+      <div class="description">
+        <h2>About this project</h2>
+        <p>
+          Island 51 is a top-down 2D survival horror game. The game begins with
+          a plane crash, leaving the protagonist stranded and empty-handed on a
+          mysterious island. The goal is to escape the island, in order to do
+          that , the player must collect resources , craft weapons , find food
+          and defeat the various enemies. <br /><br />
+          This game was developed during my time studying abroad at the
+          Technological University of the Shannon in Ireland. It was created for
+          the course "Project and Team Dynamics" and developed by a team
+          consisting of myself, Kamil Woloszyn, Kai Cheng Wong, and Emmanuel
+          Kadree. The project follows the theme of Games Fleadh 2024, "Start
+          with Nothing," and was selected by our professor to compete in the
+          Games Fleadh competition.
+        </p>
+      </div>
 
-    <div class="game-container">
-      <video width="960" height="600" controls>
-        <source src="videos/Island51Trailer.mp4" type="video/mp4">
-    </video>
-    </div>
-  </div>
+      <!----------------------------Trailer--------------------------------->
 
-</body>
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspTrailer
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <video width="960" height="600" controls>
+            <source src="videos/Island51Trailer.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <!----------------------------Enemy creation--------------------------------->
+
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspEnemy creation
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+            <p>
+              The first task that I was assigned was the creation of different
+              types of enemies. I came up with the ideas to create some generic
+              enemies: a shooting enemy, an enemy that makes the player hunger
+              bar decrease, an illusionist enemy that spawns 4 copies of itself
+              but only 1 is real, and a boss enemy.<br /><br />
+              After analyzing the code of a previous game developed called
+              “Zombie”, I realized that it already contained different types of
+              enemies, each with unique variables to define their speed, health,
+              and the amount of score the player would receive by killing them.
+              Because of that, creating more generic enemies would be easy; I
+              would simply have to change the values of the variables to match
+              my intended goal.<br /><br />
+              After doing that, I started realizing that using an array to store
+              the enemies wouldn’t be the most optimal choice to let me add and
+              delete objects freely. Which leads me to my second task, changing
+              the arrays to lists. I was successful in completing this task, and
+              after doing that, I also changed my code to use pointers. I took a
+              similar approach to another previous developed game called “Thomas
+              was Late,” where pointers are used in combination with lists
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!----------------------------Function and Feature Development--------------------------------->
+
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspFunction and Feature
+          Development
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+            <p>
+              My next task involved developing functions for various enemy
+              mechanics. I created a function to spawn two additional enemies
+              when a specific enemy was killed, utilized the bullets class
+              function for shooting, implemented a timer for enemy shooting, and
+              set up collision detection to decrease the player's hunger bar
+              upon enemy contact.<br /><br />
+              For the illusionist enemy, I took a different approach by creating
+              an array for the illusionist and spawning four illusions around
+              the player when they got close. The array randomized which
+              illusion was real, with the others only being destroyed when the
+              real one was defeated.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!----------------------------Resource Inventory and HUD--------------------------------->
+
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspResource Inventory and HUD
+          Development
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+            <p>
+              I implemented a resource inventory that could be toggled using the "Tab" key. 
+              This task revealed that the text and bar elements were disorganized, prompting me to create a "HUD" class. 
+              The HUD class managed the heads-up display, providing essential information and graphical elements for the player.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!----------------------------Map Boundary Enforcement--------------------------------->
+
+        <div class="description">
+          <h2 onclick="toggleVideo(this)">
+            <i class="fa-solid fa-caret-right"></i>&nbspMap Boundary Enforcement
+          </h2>
+        </div>
+  
+        <div class="video-container-wrapper">
+          <div class="video-container">
+            <div class="description">
+              <p>
+                Working with Jeff, we tackled the task of preventing the player from leaving the map. 
+                We created a function in the "Engine" class to detect collisions with water tiles. 
+                We encountered issues with the code detecting multiple collisions simultaneously (e.g., right side and head), which caused confusion and allowed the player to leave the intended boundaries. 
+                To fix this, we adjusted the collision detection logic and the player's hitbox for more accurate and believable behavior.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      <!----------------------------High Scores Management--------------------------------->
+
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspHigh Scores Management
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+            <p>
+              I implemented a system to save the top five high scores to a text file, finding this approach more engaging than a single high score. 
+              At the game's end, the code compares the player's score with the top five high scores and updates them accordingly. 
+              I also added main menu options to exit the game and view the rules and high scores. While doing this, I noticed the "HandleInput" class was confusing, so I reorganized the code to enhance readability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+       <!----------------------------Code Optimization and Problem Resolution--------------------------------->
+
+       <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspCode Optimization and Problem Resolution
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+            <p>
+              Throughout the project, I assisted in resolving various issues. 
+              I fixed problems with enemy shooting, illusion mechanics, map tile stretching, and pickups. 
+              As we neared project completion, I focused on organizing the code, adding missing comments, and removing unused code. 
+              I also identified and deleted code attempting to load unnecessary sounds and graphics, streamlining the project's asset folder.
+            </p>
+          </div>
+        </div>
+      </div>
+    
+
+    <script>
+      function toggleVideo(element) {
+        var icon = element.querySelector("i");
+        const videoContainer =
+          element.parentNode.nextElementSibling.querySelector(
+            ".video-container"
+          );
+        if (videoContainer.classList.contains("open")) {
+          videoContainer.style.height = "0";
+          videoContainer.classList.remove("open");
+          icon.classList.remove("fa-caret-down");
+          icon.classList.add("fa-caret-right");
+        } else {
+          videoContainer.style.height = videoContainer.scrollHeight + "px";
+          videoContainer.classList.add("open");
+          icon.classList.remove("fa-caret-right");
+          icon.classList.add("fa-caret-down");
+        }
+      }
+    </script>
+  </body>
 </html>

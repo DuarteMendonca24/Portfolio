@@ -105,6 +105,14 @@
       font-family: 'Star wars';
       font-weight: 100;
       letter-spacing: 2px;
+      cursor: pointer;
+      border-radius: 3px;
+      padding: 5px;
+      background-color: #6565656b;
+      height: 40px;
+      line-height: 30px; /* Align text vertically within the fixed height */
+      
+      
    
     }
 
@@ -118,8 +126,31 @@
 
     }
 
+    
+
     iframe {
       border: none;
+    }
+
+    .video-container-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .video-container {
+      overflow: hidden;
+      height: 0;
+      transition: height 0.5s ease-out;
+    }
+
+    .video-container video {
+      width: 100%;
+    }
+
+    .video-container.open {
+      height: auto;
+      transition: height 0.5s ease-out;
     }
   </style>
 </head>
@@ -136,6 +167,8 @@
       <h2>Language used: <span>C#</span></h2>
     </div>
 
+    <!----------------------------About this project--------------------------------->
+
     <div class="description">
       <h2>about this project</h2>
       <p>Knockout Champion is a local multiplayer game where two players try to knock 
@@ -150,10 +183,101 @@
       The design elements are influenced by "The Clone Wars" series, and the game’s narration features an AI-generated voice that simulates the series iconic narrator.</p>
     </div>
 
-    <div class="game-container">
-      <iframe src="builds/KnockoutChampion/index.html" width="960" height="600"></iframe>
+    <!----------------------------Trailer--------------------------------->
+    <div class="description">
+      <h2 onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbsptrailer</h2>
     </div>
+
+    <div  class="video-container-wrapper">
+      <div class="video-container">
+        <video width="960" height="600" controls>
+          <source src="videos/KnockoutChampion/KnockoutChampionDemo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!----------------------------Play the Game--------------------------------->
+
+    <div class="description">
+      <h2 onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspplay the game</h2>
+    </div>
+
+    <div  class="video-container-wrapper">
+      <div class="video-container">
+        <div class="game-container">
+          <iframe src="builds/KnockoutChampion/index.html" width="960" height="600"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!----------------------------Pickups--------------------------------->
+
+    <div class="description">
+      <h2 onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbsppickups</h2>
+    </div>
+
+    <div  class="video-container-wrapper">
+      <div class="video-container">
+        <div class="description">
+          <p>The game has 3 unique types of pickups. A normal pickup (yellow) that the player can 
+            throw and if it collides with the other player, it will push him, a gravity pickup (red)
+            that can be launched to the other player to make him loose gravity and stop 
+            moving and a shield pickup (blue) that gives the player the ability to push the other 
+            player further if they both collide with each other.
+          </p>
+
+        </div>
+        
+        <video width="960" height="600" controls>
+          <source src="videos/KnockoutChampion/pickups.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!----------------------------Map Changes--------------------------------->
+
+    <div class="description">
+      <h2 onclick="toggleVideo(this)"><i class="fa-solid fa-caret-right"></i>&nbspmap changes</h2>
+    </div>
+
+    <div  class="video-container-wrapper">
+      <div class="video-container">
+        <div class="description">
+          <p>The map also has its unique features, each 60 seconds 2 platforms will be 
+            removed from the map.<br><br>On top of that there are also 4 unique changes that will 
+            happen to the gameplay , the changes activated will be random and they are: no 
+            gravity platforms(if the player goes on top the platforms they will start going 
+            down) , inverted movement (the key to move right becomes the key to move left 
+            and vice-versa , also happens with moving forward and backwards) , increased 
+            jump and infinite ammo ( the players can throw infinite normal pickups ). 
+            <br><br>All this game changes will last for 15 seconds and will happen first at 30 seconds 
+            and then every 60 seconds.
+          </p>
+
+        </div>
+      </div>
+    </div>
+   
   </div>
+
+  <script>
+    function toggleVideo(element) {
+      var icon = element.querySelector("i");
+      const videoContainer = element.parentNode.nextElementSibling.querySelector('.video-container');
+        if (videoContainer.classList.contains('open')) {
+          videoContainer.style.height = '0';
+          videoContainer.classList.remove('open');
+          icon.classList.remove("fa-caret-down");
+          icon.classList.add("fa-caret-right");
+        } else {
+          videoContainer.style.height = videoContainer.scrollHeight + 'px';
+          videoContainer.classList.add('open');
+          icon.classList.remove("fa-caret-right");
+          icon.classList.add("fa-caret-down");
+        }
+    }
+
+</script>
 
 </body>
 </html>
