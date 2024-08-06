@@ -1,157 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Website</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/e5e9fc0a0a.js" crossorigin="anonymous"></script>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: auto; /* Enable scrolling */
-      background-image: url(images/spellBackground3.jpg);
-      background-size: cover; /* Ensures the image covers the entire background */
-      background-repeat: no-repeat; /* Prevents the image from repeating */
-      background-position: center center; /* Centers the image */
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e5e9fc0a0a.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: auto; /* Enable scrolling */
+        background-image: url(images/spellBackground3.jpg);
+        background-size: cover; /* Ensures the image covers the entire background */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        background-position: center center; /* Centers the image */
+      }
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start; /* Align items at the start of the container */
-    }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Align items at the start of the container */
+      }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      background: #1c1c1c13; /* Semi-transparent background */
-      border-radius: 15px; /* Rounded corners */
-      max-width: 1000px; /* Maximum width */
-      width: 100%;
-      box-sizing: border-box;
-      margin: 20px; /* Add margin for spacing */
-      border: 2px solid #1c1c1c; /* Optional border for better visibility */
-    }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: #1c1c1c13; /* Semi-transparent background */
+        border-radius: 15px; /* Rounded corners */
+        max-width: 1000px; /* Maximum width */
+        width: 100%;
+        box-sizing: border-box;
+        margin: 20px; /* Add margin for spacing */
+        border: 2px solid #1c1c1c; /* Optional border for better visibility */
+      }
 
-    .title {
-      color: black;
-      margin-bottom: 20px;
-     
-    }
+      .title {
+        color: black;
+        margin-bottom: 20px;
+      }
 
-    @font-face{
-      font-family: "Planewalker";
-      src: url(Fonts/SpellShaders/Planewalker.eot) format('embedded-opentype'), url(Fonts/SpellShaders/Planewalker.ttf) format('truetype'), url(Fonts/SpellShaders/Planewalker.woff) format('woff');
-    }
+      @font-face {
+        font-family: "Planewalker";
+        src: url(Fonts/SpellShaders/Planewalker.eot) format("embedded-opentype"),
+          url(Fonts/SpellShaders/Planewalker.ttf) format("truetype"),
+          url(Fonts/SpellShaders/Planewalker.woff) format("woff");
+      }
 
-    @import url('https://fonts.cdnfonts.com/css/antiqua-2');
+      @import url("https://fonts.cdnfonts.com/css/antiqua-2");
 
-    .title h1{
-      font-family:'Planewalker'; 
-    }
+      .title h1 {
+        font-family: "Planewalker";
+      }
 
-    .info {
-      display: flex;
-      justify-content: space-around; /* Space between the items */
-      width: 100%;
-      max-width: 960px; /* Adjust based on your layout */
-      padding: 10px;
-      box-sizing: border-box;
-    }
+      .info {
+        display: flex;
+        justify-content: space-around; /* Space between the items */
+        width: 100%;
+        max-width: 960px; /* Adjust based on your layout */
+        padding: 10px;
+        box-sizing: border-box;
+      }
 
-    .info h2 {
-      margin: 0 10px; /* Add some margin between the items */
-      margin-top: 0px;
-      color: black;
-      font-family: 'Planewalker';
-      font-size: 25px;
-   
+      .info h2 {
+        margin: 0 10px; /* Add some margin between the items */
+        margin-top: 0px;
+        color: black;
+        font-family: "Planewalker";
+        font-size: 25px;
+      }
+
+      .info h2 span {
+        font-size: 22px;
+        font-family: "Book Antiqua", sans-serif;
+      }
+
+      h3{
+        font-family: "Book Antiqua", sans-serif;
+      }
+
+      .description {
+        width: 100%;
+        max-width: 960px; /* Adjust based on your layout */
+        padding: 10px;
+        box-sizing: border-box;
+        color: black;
+        text-align: left;
+      }
+
+      .description h2,
+      .description p {
+        margin-left: -10px;
+        margin-top: 20px;
+      }
+
+      .description h2 {
+        font-family: "Planewalker";
+        cursor: pointer;
+      }
+
+      .description p {
+        font-family: "Book Antiqua", sans-serif;
+        text-align: justify;
+        font-size: 17px;
+      }
+
       
-    }
+      .game-container {
+        margin-top: 20px;
+      }
 
-    .info h2 span {
-     
-      font-size: 22px;
-      font-family: 'Book Antiqua', sans-serif;
-     
-    }
+      iframe {
+        border: none;
+      }
 
+      .video-container-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
 
-    .description {
-      width: 100%;
-      max-width: 960px; /* Adjust based on your layout */
-      padding: 10px;
-      box-sizing: border-box;
-      color: black;
-      text-align: left;
-      
-    }
+      .video-container {
+        overflow: hidden;
+        height: 0;
+        transition: height 0.5s ease-out;
+      }
 
-    .description h2,
-    .description p {
+      .video-container video {
+        width: 100%;
+      }
 
-      margin-left: -10px;
-      margin-top: 20px;
-     
-    }
+      .video-container.open {
+        height: auto;
+        transition: height 0.5s ease-out;
+      }
 
-    .description h2{
-      font-family: 'Planewalker';
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Spell Shaders</h1>
+      </div>
 
-    }
+      <div class="info">
+        <h2>Project Status: <span>Completed</span></h2>
+        <h2>Software used: <span>Unity</span></h2>
+        <h2>Language used: <span>HLSL & C#</span></h2>
+      </div>
 
-    .description p{
-      font-family: 'Book Antiqua', sans-serif;
-      text-align: justify;
-      font-size: 17px;
-    }
+      <div class="description">
+        <h2>About this project</h2>
+        <p>
+          This project consists of a package of shaders themed around "Spells,"
+          created for Unity's Built-in Render Pipeline. The development involved
+          a variety of shaders, including surface, vertex, and fragment shaders,
+          and employed a range of techniques such as post-processing, Fresnel
+          effects, rim lighting, and depth textures. <br /><br />
+          This project was developed for the Advanced 3D Programming Techniques
+          course by a team comprising myself, Ana Neves, and Francisco Andrade.
+          We drew inspiration from "Harry Potter" and "Doctor Strange" to
+          conceptualize some of the shaders.
+          <br /><br />
+          I was personally responsible for developing the spells "Out of Body,"
+          "Shield," "Poison," and "Shadow World."
+        </p>
+      </div>
 
-    .game-container {
-      margin-top: 20px;
+      <!----------------------------Demo Video--------------------------------->
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspDemo Video
+        </h2>
+      </div>
 
-    }
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <video width="960" height="600" controls>
+            <source src="videos/spellShaders/spellShadersDemo.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
 
-    iframe {
-      border: none;
-    }
-  </style>
-</head>
-<body>
+      <!----------------------------Out of Body--------------------------------->
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspOut of Body
+        </h2>
+      </div>
 
-  <div class="container">
-    <div class="title">
-      <h1>Spell Shaders</h1>
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+            <p>
+              <h3>Motivation and Context in a Game</h3><br>The "Out of Body" shader was inspired by the astral projection
+              effect in the film "Doctor Strange". This effect can be utilized
+              in games with magical elements to simulate an astral projection
+              spell or the death of enemies.<br /><br /><h3>Effect Composition</h3><br>The effect consists of a
+              surface shader called “afterImage” that gives the character a
+              transparent, ghostly appearance while maintaining the original
+              texture. Additionally, the “JumpBack” script handles animations,
+              and the “AfterImage” script creates multiple meshes of the
+              character during the animation.<br /><br /><h3>Interaction and Flexibility</h3><br>The shader is designed for humanoid characters with animations  
+              but can be used on other objects as long as the difference in positions between the original object and the 
+              created images is visible. The color and transparency of the object can be modified, and the “AfterImage” script has a 
+              variable to control the number of meshes created.<br /><br /><h3>Shader Theory</h3><br>The shader uses
+              properties for the object's textures (Albedo, Normal, Emission)
+              and includes a color and two ranges to control color intensity and
+              transparency. To enhance realism, the normal map and base color
+              are applied according to predefined textures. Inspired by the
+              diffuse light aura effect in "Doctor Strange", an Emission texture
+              is used. A fresnel effect is added for a colored contour based on
+              the defined color and intensity. The material's alpha is set to
+              the inspector's declared alpha.
+            </p>
+          </div>
+
+          <video width="960" height="600" controls>
+            <source src="videos/spellShaders/outOfBody.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          
+        </div>
+      </div>
+
+      <!----------------------------Shield--------------------------------->
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspShield
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+           
+            <p>
+              <h3>Motivation and Context in a Game</h3><br>The "Shield" shader was inspired by the common depiction of
+              magical barriers in games and movies. This unlit shader can create
+              a protective barrier effect and is versatile enough for use in
+              both magical and sci-fi themed games.<br /><br />
+              <h3>Effect Composition</h3><br>The effect is created using an Unlit Shader named “Shield,” which
+              implements methods to produce a shield with distortion, edge glow,
+              and a growing animation based on a range.<br /><br /><h3>Interaction and Flexibility</h3><br>This shader
+              can be applied to a sphere and placed anywhere to simulate a
+              shield. By adjusting the sphere's scale, the shield's size can be
+              manipulated. The shader allows for customization of the normal map
+              texture, distortion properties, and shield color.<br /><br />
+              <h3>Shader Theory</h3><br>The shader defines properties for a normal map, distortion
+              strength, speed, and direction, as well as colors and intensity
+              for the fresnel effect and a range to control shield size.<br /><br />
+              Local and Screen Position Variables: Used for calculations
+              related to shield growth and distortion.<br /><br />Fresnel
+              Effect: Applied for edge color. Smoothstep Function: Creates a
+              smooth transition effect.<br /><br />Clip Function: Discards
+              pixels below a certain y-axis value, simulating a half-sphere
+              shield.<br /><br />
+              Distortion Effect: Achieved by offsetting UV coordinates over
+              time, controlled by distortion parameters. The normal map is
+              sampled and adjusted, then added to screen coordinates for a
+              dynamic visual effect.<br /><br />
+              Alpha Calculation: Based on the Fresnel effect, interpolating
+              between edge glow and edge color for a smooth transition.<br /><br />
+              Dynamic Edge Glow and Distortion: If a pixel’s local y position is
+              below a certain value, the shader returns a combination of edge
+              color and projected texture, creating edge glow and dynamic
+              distortion. Otherwise, the shader sets opacity to zero, enabling a
+              shield growth effect.
+            </p>
+          </div>
+
+          <video width="960" height="600" controls>
+            <source src="videos/spellShaders/shield.mp4" type="video/mp4" />
+          </video>
+
+        </div>
+      </div>
+
+      <!----------------------------Poison--------------------------------->
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspPoison
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+            <p>
+              <h3>Motivation and Context in a Game</h3><br>The idea for this shader emerged from a professor's suggestion to
+              create a post-processing effect. This shader can simulate player
+              poisoning in a game, adding an immersive visual element.<br /><br /><h3>Effect Composition</h3><br>The
+              effect consists of an image effect shader named “poisonEffect,”
+              which creates an oval vignette and generates noise. It also uses a
+              script called “Post” to apply the material for post-processing
+              effects.<br /><br /><h3>Interaction and Flexibility</h3><br>Since this effect uses an image shader, it
+              interacts with the player's camera. The shader allows
+              customization of the vignette size and fade effect, noise speed,
+              and color. By changing the color to a reddish-orange, it can also
+              simulate a fire effect.<br /><br /><h3>Shader Theory</h3><br>The shader was converted from
+              GLSL to HLSL, based on a noise shader from "The Book of Shaders".
+              <br /><br />Noise Generation: The converted noise shader was
+              animated using the _TimeScale property for a dynamic effect.
+              Adjustments with smoothstep provided a fog-like, toxic appearance.
+              <br /><br />Vignette Creation: UV coordinates were normalized to
+              center the screen. The distance from the center was calculated,
+              and smoothstep was used for a smooth transition between the
+              central image area and the edges. <br /><br />Final Color
+              Calculation: The vignette mask was applied to preserve the central
+              image color, while the inverted mask, tint color, and noise
+              created the vignette effect. <br /><br />The final effect is
+              rendered if the _IsActive toggle is enabled.<br /><br />
+              The “Post” script uses Graphics.Blit to apply the poison material
+              for post-processing. It includes functions to switch between
+              post-processing effects and deactivate them after 4 seconds,
+              utilizing the _IsActive toggle.
+            </p>
+          </div>
+
+          
+          <video width="960" height="600" controls>
+            <source src="videos/spellShaders/poison.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      <!----------------------------Shadow World--------------------------------->
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspShadow World
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+            <p>
+              <h3>Motivation and Context in a Game</h3><br>The motivation for this shader came from exploring the use of the
+              camera's depth texture. This shader can simulate a spell where the
+              player enters a shadow world, becoming invisible to others,
+              similar to an ability in the game "Paladins."<br><br><h3>Effect Composition</h3><br>
+              The effect consists of an image effect shader named
+              “shadowEffect,” which interpolates the camera's depth texture with
+              the main texture and a specified color. It also utilizes the
+              previously mentioned "Post" script. <br><br><h3>Interaction and Flexibility</h3><br>
+              Since this effect uses an image shader, it interacts with the
+              player's camera. The effect is simple, allowing adjustments only
+              to the color and the interpolation intensity. <br><br><h3>Shader Theory</h3><br>
+              Properties: Declared properties allow changes to the effect's
+              intensity and color.<br><br> Depth Texture: The global property
+              _CameraDepthTexture is declared to access the camera's depth
+              texture. The red channel value of this texture is accessed and
+              converted to a range of zero to one using the Linear01Depth
+              function. <br><br>Interpolation: The linear depth value is interpolated
+              with the original texture color (col) using the specified
+              intensity (_Intensity). If the _IsActive variable is enabled, a
+              second interpolation mixes the original color with the result of
+              the first interpolation, tinted by the specified color (_Color),
+              using _Intensity as the blending factor.
+            </p>
+          </div>
+
+          <video width="960" height="600" controls>
+            <source src="videos/spellShaders/shadowWorld.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
     </div>
 
-    <div class="info">
-      <h2>Project Status: <span>Completed</span></h2>
-      <h2>Software used: <span>Unity</span></h2>
-      <h2>Language used: <span>HLSL & C#</span></h2>
-    </div>
-
-    <div class="description">
-      <h2>About this project</h2>
-      <p>This project consists of a package of shaders themed around "Spells," created for Unity's Built-in Render Pipeline. 
-      The development involved a variety of shaders, including surface, vertex, and fragment shaders, and employed a range of techniques such as post-processing, Fresnel effects, rim lighting, and depth textures.
-      <br><br>
-      This project was developed for the Advanced 3D Programming Techniques course by a team comprising myself, Ana Neves, and Francisco Andrade. 
-      We drew inspiration from "Harry Potter" and "Doctor Strange" to conceptualize some of the shaders.
-      <br><br>
-      I was personally responsible for developing the spells "Out of Body," "Shield," "Poison," and "Shadow World."
-      </p>
-    </div>
-
-    <div class="game-container">
-      <video width="960" height="600" controls>
-        <source src="videos/spellShadersDemo.mp4" type="video/mp4">
-    </video>
-    </div>
-  </div>
-
-</body>
+    <script>
+      function toggleVideo(element) {
+        var icon = element.querySelector("i");
+        const videoContainer =
+          element.parentNode.nextElementSibling.querySelector(
+            ".video-container"
+          );
+        if (videoContainer.classList.contains("open")) {
+          videoContainer.style.height = "0";
+          videoContainer.classList.remove("open");
+          icon.classList.remove("fa-caret-down");
+          icon.classList.add("fa-caret-right");
+        } else {
+          videoContainer.style.height = videoContainer.scrollHeight + "px";
+          videoContainer.classList.add("open");
+          icon.classList.remove("fa-caret-right");
+          icon.classList.add("fa-caret-down");
+        }
+      }
+    </script>
+  </body>
 </html>
