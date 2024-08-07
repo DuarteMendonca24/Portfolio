@@ -92,7 +92,7 @@
         box-sizing: border-box;
         color: black;
         text-align: left;
-        margin-top: 20px; /* Add margin to separate from slideshow */
+        margin-top: 10px; /* Add margin to separate from slideshow */
       }
 
       .description h2,
@@ -106,6 +106,7 @@
         font-weight: 100;
         font-size: 30px;
         color: #9804fc;
+        cursor: pointer;
       }
 
       .description p {
@@ -233,6 +234,27 @@
           font-size: 11px;
         }
       }
+
+      .video-container-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .video-container {
+        overflow: hidden;
+        height: 0;
+        transition: height 0.5s ease-out;
+      }
+
+      .video-container video {
+        width: 100%;
+      }
+
+      .video-container.open {
+        height: auto;
+        transition: height 0.5s ease-out;
+      }
     </style>
   </head>
   <body>
@@ -325,20 +347,84 @@
         <span class="dot" onclick="currentSlide(9)"></span>
       </div>
 
-      <div class="description">
-        <h2>COnTROLS</h2>
-        <p>
-          . Right mouse button to walk <br /><br />
-          . Spacebar to open the inventory
-        </p>
-      </div>
+      <!----------------------------Controls--------------------------------->
 
       <div class="description">
-        <h2>WALKTROUGH</h2>
-        <p>
-          . Right mouse button to walk <br /><br />
-          . Spacebar to open the inventory
-        </p>
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspCOnTROLS
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <div class="description">
+            <p>
+              . Right mouse button to walk <br /><br />
+              . Spacebar to open the inventory
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!----------------------------Walktrough--------------------------------->
+
+     
+
+    <div class="description">
+      <h2 onclick="toggleVideo(this)">
+        <i class="fa-solid fa-caret-right"></i>&nbspWALKTROUGH
+      </h2>
+    </div>
+
+    <div class="video-container-wrapper">
+      <div class="video-container">
+        <div class="description">
+          <p>
+            Level 1 goal is to buy a ticket to watch a movie in the cinema without talking to the attendant.<br><br>
+
+            First, when the player passes by the movie poster about cops, they receive a message saying that free sirens are being given away as a promotion for the movie. The player can click on the siren on top of the movie poster to add it to their inventory.<br><br>
+            
+            Next, upon stepping outside the cinema, the player finds a balloon lying around, which can also be added to the inventory.<br><br>
+            
+            In the alley to the right, the player encounters a couple of kids playing with bombs. By using the siren from the inventory, the player can scare away the kids and collect one of the bombs left behind.<br><br>
+            
+            Inside the cinema, the player sees a mother and son getting some popcorn. Blowing up the balloon will scare them away, allowing the player to add the popcorn to their inventory.<br><br>
+            
+            Finally, the player can return to the beginning and use the popcorn and the bomb to create a popcorn explosion that distracts the attendant. This distraction allows the player to obtain a ticket without any interaction.<br><br>
+          </p>
+
+          <video width="960" height="600" controls>
+            <source src="videos/Interafobia/level1Walktrough.mp4" type="video/mp4" />
+          </video>
+
+          <p>
+            Level 2 Goal is to retrieve the BD that the character forgot on a bench in the park, without interacting with the man who is sitting on it.<br><br>
+
+            First, the player must go down and roll in the mud to get dirty. This will allow them to cross the ice cream line and get the battery, as people will move away from them.<br><br>
+
+            With the battery in the inventory, the player can go up to a playing boat and use the battery to activate the boat's propellers. This will cause the man's hat to fly off along with the BD.<br><br>
+
+            Next, the player will notice that a dog now has the BD. To retrieve it, the player must go back to the boat, retrieve the battery, and use it on the ice cream cart. This will create a distraction, causing the dog to leave the BD unattended.<br><br>
+            
+          </p>
+
+          <video width="960" height="600" controls>
+            <source src="videos/Interafobia/level2Walktrough.mp4" type="video/mp4" />
+          </video>
+
+          <p>
+            The game concludes with a final scene where the character returns home.<br><br>
+
+            In this scene, the player completes mundane tasks such as washing dishes and brushing their teeth.<br><br>
+
+            During the last task, as the player stares into the mirror, they see their reflection—but it's in purple. Throughout the game, all characters except the player are depicted in purple. I prefer to leave this scene open to interpretation, as it can hold multiple meanings.
+            
+          </p>
+
+          <video width="960" height="600" controls>
+            <source src="videos/Interafobia/finalScene.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
     </div>
 
@@ -372,6 +458,25 @@
         }
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
+      }
+
+      function toggleVideo(element) {
+        var icon = element.querySelector("i");
+        const videoContainer =
+          element.parentNode.nextElementSibling.querySelector(
+            ".video-container"
+          );
+        if (videoContainer.classList.contains("open")) {
+          videoContainer.style.height = "0";
+          videoContainer.classList.remove("open");
+          icon.classList.remove("fa-caret-down");
+          icon.classList.add("fa-caret-right");
+        } else {
+          videoContainer.style.height = videoContainer.scrollHeight + "px";
+          videoContainer.classList.add("open");
+          icon.classList.remove("fa-caret-right");
+          icon.classList.add("fa-caret-down");
+        }
       }
     </script>
   </body>
