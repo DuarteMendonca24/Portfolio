@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e5e9fc0a0a.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: auto; /* Enable scrolling */
+        background-image: url(images/movies.jpg);
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Align items at the start of the container */
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: #1c1c1c8e; /* Semi-transparent background */
+        border-radius: 15px; /* Rounded corners */
+        max-width: 1000px; /* Maximum width */
+        width: 100%;
+        box-sizing: border-box;
+        margin: 20px; /* Add margin for spacing */
+        border: 2px solid white; /* Optional border for better visibility */
+      }
+
+      .title {
+        color: #fff;
+        margin-bottom: 20px;
+      }
+
+      @font-face {
+        font-family: "Movie";
+        src: url(Fonts/MovieStudio/MoviePostersDelight.eot)
+            format("embedded-opentype"),
+          url(Fonts/MovieStudio/MoviePostersDelight.ttf) format("truetype"),
+          url(Fonts/MovieStudio/MoviePostersDelight.woff) format("woff");
+      }
+
+      .title h1 {
+        font-family: "Movie";
+        letter-spacing: 2px;
+        font-weight: 100;
+      }
+
+      .info {
+        display: flex;
+        justify-content: space-around; /* Space between the items */
+        width: 100%;
+        max-width: 960px; /* Adjust based on your layout */
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .info h2 {
+        margin: 0 10px; /* Add some margin between the items */
+        margin-top: 0px;
+        color: #fff;
+        font-family: "Movie";
+        font-weight: 100;
+        letter-spacing: 2px;
+      }
+
+      .info h2 span {
+        font-size: 20px; /* Adjust the font size if needed */
+
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      .description {
+        width: 100%;
+        max-width: 960px; /* Adjust based on your layout */
+        padding: 10px;
+        box-sizing: border-box;
+        color: #fff;
+        text-align: left;
+      }
+
+      .description h2,
+      .description p {
+        margin-left: -10px;
+        margin-top: 20px;
+      }
+
+      .description h2 {
+        font-family: "Movie";
+        font-weight: 100;
+        letter-spacing: 2px;
+        cursor: pointer;
+        border-radius: 3px;
+        padding: 5px;
+        background-color: #eaeaea6b;
+        height: 40px;
+        line-height: 30px; /* Align text vertically within the fixed height */
+      }
+
+      .description p {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        text-align: justify;
+      }
+
+      .game-container {
+        margin-top: 20px;
+      }
+
+      iframe {
+        border: none;
+      }
+
+      .video-container-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .video-container {
+        overflow: hidden;
+        height: 0;
+        transition: height 0.5s ease-out;
+      }
+
+      .video-container video {
+        width: 100%;
+      }
+
+      .video-container.open {
+        height: auto;
+        transition: height 0.5s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Movie Studio</h1>
+      </div>
+
+      <div class="info">
+        <h2>Project Status: <span>Completed</span></h2>
+        <h2>Software used: <span>Android Studio</span></h2>
+        <h2>Language used: <span>Kotlin</span></h2>
+      </div>
+
+      <!----------------------------About this project--------------------------------->
+
+      <div class="description">
+        <h2>about this project</h2>
+        <p>
+          Movie Studio is a mobile application developed using Kotlin as part of
+          our "Mobile Game Development" course. The app allows users to search
+          for movies and series, add them to a favorites list, and recommend
+          them to others. Users can also access IMDb ratings and details
+          directly from the app.<br /><br />The project was built with Firebase
+          for user data management, ensuring each account's information is
+          securely stored and accessible across devices. The app was a
+          collaborative effort, designed to enhance the movie-watching
+          experience with easy search, save, and share features.
+        </p>
+      </div>
+
+      <!----------------------------Trailer--------------------------------->
+      <div class="description">
+        <h2 onclick="toggleVideo(this)">
+          <i class="fa-solid fa-caret-right"></i>&nbspDemo Video
+        </h2>
+      </div>
+
+      <div class="video-container-wrapper">
+        <div class="video-container">
+          <video width="960" height="600" controls>
+            <source src="videos/MovieStudio/demo.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function toggleVideo(element) {
+        var icon = element.querySelector("i");
+        const videoContainer =
+          element.parentNode.nextElementSibling.querySelector(
+            ".video-container"
+          );
+        if (videoContainer.classList.contains("open")) {
+          videoContainer.style.height = "0";
+          videoContainer.classList.remove("open");
+          icon.classList.remove("fa-caret-down");
+          icon.classList.add("fa-caret-right");
+        } else {
+          videoContainer.style.height = videoContainer.scrollHeight + "px";
+          videoContainer.classList.add("open");
+          icon.classList.remove("fa-caret-right");
+          icon.classList.add("fa-caret-down");
+        }
+      }
+    </script>
+  </body>
+</html>
