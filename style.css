@@ -68,8 +68,8 @@ nav ul li a:hover::after {
 }
 
 .text-content {
-  max-width: 100%; /* Reduce the width */
-  margin-right: 420px; /* Add some space between the text and the button */
+  max-width: 60%; /* Reduce the width */
+  margin-right: 300px; /* Add some space between the text and the button */
   margin-top: 40px;
 }
 
